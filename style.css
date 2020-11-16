@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+.mainContainer {
+  width: 87%;
+  margin: auto;
+}
+
+.Container {
+  min-width: 326.25px;
+  width: 100%;
+  max-width: 1092px;
+  margin: auto;
+  text-align: center;
+}
+
+.arrowUp {
+  display: inline-block;
+  margin-bottom: 2px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #1db489 transparent;
+}
+
+.arrowDown {
+  display: inline-block;
+  margin-bottom: -3px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #dc414c transparent transparent transparent;
+}
+
+*:root {
+  --arrowUpColor: hsl(163, 72%, 41%);
+  --arrowDownColor: hsl(356, 69%, 56%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --youTube: hsl(348, 97%, 39%);
+  --toggle: linear-gradient(90deg, hsl(230, 22%, 74%), hsl(230, 22%, 74%));
+  --toggleHover: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --Bg: hsl(0, 0%, 100%);
+  --top_Bg_Pattern: hsl(225, 100%, 98%);
+  --Card_Bg: hsl(227, 47%, 96%);
+  --Card_Bg_hover: hsl(227, 47%, 90%);
+  --text_1: hsl(228, 12%, 44%);
+  --text_2: hsl(230, 17%, 14%);
+}
+
+.color {
+  background-color: red;
+}
+
+.darkTheme {
+  --toggle: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --toggleHover: linear-gradient(90deg, hsl(230, 22%, 74%), hsl(230, 22%, 74%));
+  --Bg: hsl(230, 17%, 14%);
+  --top_Bg_Pattern: hsl(232, 19%, 15%);
+  --Card_Bg: hsl(228, 28%, 20%);
+  --Card_Bg_hover: hsl(228, 28%, 25%);
+  --text_1: hsl(228, 34%, 66%);
+  --text_2: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  background-color: var(--Bg);
+  min-width: 375px;
+  max-width: 1440px;
+  width: 100%;
+  position: relative;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  background-color: var(--top_Bg_Pattern);
+  height: 220px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.header {
+  padding-top: 2rem;
+  text-align: left;
+}
+
+@media (min-width: 613px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.header .title {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--text_1);
+}
+
+@media (min-width: 613px) {
+  .header .title {
+    border: none;
+  }
+}
+
+.header .title h2 {
+  color: var(--text_2);
+  font-size: 1.5rem;
+}
+
+@media (min-width: 613px) {
+  .header .title h2 {
+    font-size: 1.8rem;
+  }
+}
+
+.header .title p {
+  color: var(--text_1);
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  font-weight: 700;
+}
+
+.header .taggleContainer {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 613px) {
+  .header .taggleContainer {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.header .taggleContainer p {
+  color: var(--text_1);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.header .taggleContainer .taggle {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  border-radius: 15px;
+  background: var(--toggle);
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: background 0.5s linear;
+  transition: background 0.5s linear;
+}
+
+.header .taggleContainer .taggle:hover {
+  background: var(--toggleHover);
+}
+
+.header .taggleContainer .taggle .taggleIn {
+  position: absolute;
+  display: inline-block;
+  height: 19px;
+  width: 19px;
+  border-radius: 50%;
+  background-color: var(--Bg);
+  right: 3px;
+  top: 3px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.sectionTop {
+  margin: 2rem auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (326.5px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 326.5px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 613px) {
+  .sectionTop {
+    -ms-grid-columns: (255px)[auto-fit];
+        grid-template-columns: repeat(auto-fit, 255px);
+  }
+}
+
+.sectionTop .topBox {
+  border-top: 4px solid transparent;
+  border-radius: 5px;
+  background-color: var(--Card_Bg);
+  padding: 1rem;
+  max-width: 100%;
+  height: 217px;
+  cursor: pointer;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.sectionTop .topBox:hover {
+  background-color: var(--Card_Bg_hover);
+}
+
+.sectionTop .topBox div {
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sectionTop .topBox div img {
+  margin-right: 0.5rem;
+}
+
+.sectionTop .topBox div p {
+  color: var(--text_1);
+  font-weight: 700;
+}
+
+.sectionTop .topBox h2 {
+  color: var(--text_2);
+  font-size: 3.5rem;
+  margin: 1.5rem 0 0.2rem;
+}
+
+.sectionTop .topBox > p {
+  text-transform: uppercase;
+  color: var(--text_1);
+  letter-spacing: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTop .topBox .arrowUpColor {
+  color: var(--arrowUpColor);
+  font-weight: bold;
+}
+
+.sectionTop .topBox .arrowDownColor {
+  color: var(--arrowDownColor);
+  font-weight: bold;
+}
+
+.sectionTop .facebook {
+  border-color: var(--facebook);
+}
+
+.sectionTop .twitter {
+  border-color: var(--twitter);
+}
+
+.sectionTop .instagram {
+  position: relative;
+  border: none;
+}
+
+.sectionTop .instagram .after {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  top: 0px;
+  left: 0;
+  z-index: 10;
+  background: var(--instagram);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.sectionTop .youtube {
+  border-color: var(--youTube);
+}
+
+.headText {
+  text-align: left;
+}
+
+.headText h2 {
+  color: var(--text_2);
+  font-size: 1.5rem;
+  padding: 2rem 0;
+}
+
+.sectionBottom {
+  margin: 0rem auto 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (326.5px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 326.5px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 613px) {
+  .sectionBottom {
+    -ms-grid-columns: (255px)[auto-fit];
+        grid-template-columns: repeat(auto-fit, 255px);
+  }
+}
+
+.sectionBottom .bottomBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 126px;
+  padding: 1.5rem 1.5rem 1rem;
+  background-color: var(--Card_Bg);
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.sectionBottom .bottomBox:hover {
+  background-color: var(--Card_Bg_hover);
+}
+
+.sectionBottom .bottomBox div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sectionBottom .bottomBox div p {
+  text-align: left;
+  color: var(--text_1);
+  font-weight: 700;
+  margin-top: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.sectionBottom .bottomBox div h2 {
+  text-align: left;
+  color: var(--text_2);
+  font-size: 2rem;
+}
+
+.sectionBottom .bottomBox div img {
+  display: inline-block;
+  width: 20px;
+  margin-left: auto;
+  margin-bottom: 2.3rem;
+}
+
+.sectionBottom .bottomBox div .arrowUpColor {
+  color: var(--arrowUpColor);
+  font-weight: 700;
+}
+
+.sectionBottom .bottomBox div .arrowDownColor {
+  color: var(--arrowDownColor);
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */
